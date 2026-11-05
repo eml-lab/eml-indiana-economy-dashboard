@@ -46,7 +46,7 @@ def page_layout(variable):
                             className="month-button", style={"marginTop": "12px", "padding": "8px 16px", "width": "auto"}),
                 html.Label("Select counties on the map", className="field-label"),
                 html.P("Click a county to select it; click again to remove it.", className="subtle"),
-                dcc.Graph(id=f"{variable}-county-map", config={"displaylogo": False}, style={"height": "520px"}),
+                dcc.Graph(id=f"{variable}-county-map", config={"displaylogo": False}, style={"height": "680px"}),
                 html.Div(id=f"{variable}-selected-label", className="subtle"),
             ], style={"display": "none"}),
         ]),

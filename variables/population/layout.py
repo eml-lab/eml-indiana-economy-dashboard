@@ -29,6 +29,7 @@ def population_layout():
             # State-only counterfactual inputs. Defaults are the published, adjusted U.S. path.
             html.Div(id="population-state-controls", children=[
                 html.H3("Alternative U.S. population path"),
+                html.P('What is a counterfactual? A counterfactual explores a hypothetical scenario: what would the forecast look like if certain economic conditions were different? Adjust the available inputs to compare the resulting forecast with the baseline forecast.', className="subtle"),
                 html.P("Enter U.S. population levels (millions of persons) for every forecast year, then generate the Indiana counterfactual. The baseline is shown until you run a scenario.", className="subtle"),
                 html.Div([
                     html.Div([
@@ -66,7 +67,7 @@ def population_layout():
                 html.Label("Select counties on the map", className="field-label"),
                 html.P("Click a county to select it; click again to remove it.", className="subtle"),
                 dcc.Graph(id="population-county-map", config={"displaylogo": False},
-                          style={"height": "520px"}),
+                          style={"height": "680px"}),
                 html.Div(id="population-selected-label", className="subtle"),
             ], style={"display": "none"}),
         ]),

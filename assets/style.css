@@ -470,7 +470,7 @@ body.is-fill-dragging,body.is-fill-dragging * {
   margin: 0 auto;
   padding: 28px;
   display: grid;
-  grid-template-columns: minmax(280px, 350px) minmax(0, 1fr);
+  grid-template-columns: minmax(360px, 470px) minmax(0, 1fr);
   gap: 24px;
   align-items: start;
 }

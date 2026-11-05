@@ -35,6 +35,7 @@ def build_layout():
             # LEFT PANEL: U.S. premise and the editable input spreadsheet.
             html.Section(className="panel controls", children=[
                 html.H2("U.S. nonfarm employment premise"),
+                html.P('What is a counterfactual? A counterfactual explores a hypothetical scenario: what would the forecast look like if certain economic conditions were different? Adjust the available inputs to compare the resulting forecast with the baseline forecast.', className="subtle"),
                 # Blue information chips: latest U.S. actual and SPF endpoint.
                 html.Div(className="meta", children=[
                     html.Span(f"Last U.S. actual: {float(us.iloc[-1]):,.3f} thousand ({us.index[-1]:%b %Y})"),

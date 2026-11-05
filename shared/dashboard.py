@@ -11,18 +11,18 @@ def build_dashboard():
         html.Div(className="variable-selector", children=[
             html.Label("Forecast variable", className="field-label"),
             dcc.Dropdown(id="dashboard-variable", options=[
-                {"label": "Nonfarm Employment", "value": "nonfarm_employment"},
                 {"label": "Population", "value": "population"},
+                {"label": "Nonfarm Employment", "value": "nonfarm_employment"},
                 {"label": "Total Employment", "value": "total_employment"},
                 {"label": "Unemployment Rate", "value": "unemployment_rate"},
                 {"label": "GDP", "value": "gdp"},
                 {"label": "Wages and Salaries", "value": "wages_salaries"},
-            ], value="nonfarm_employment", clearable=False),
+            ], value="population", clearable=False),
         ]),
         # Keep both pages mounted: nonfarm employment inputs and results are preserved
         # when the user switches to Population and then back.
-        html.Div(id="nonfarm-employment-page", children=nonfarm_layout()),
-        html.Div(id="population-page", children=population_layout(), style={"display": "none"}),
+        html.Div(id="nonfarm-employment-page", children=nonfarm_layout(), style={"display": "none"}),
+        html.Div(id="population-page", children=population_layout()),
         html.Div(id="total-employment-page", children=laus_layout("total_employment"), style={"display": "none"}),
         html.Div(id="unemployment-rate-page", children=laus_layout("unemployment_rate"), style={"display": "none"}),
         html.Div(id="gdp-page", children=gdp_layout(), style={"display": "none"}),

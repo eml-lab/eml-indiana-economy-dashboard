@@ -1,0 +1,533 @@
+* {
+    box-sizing:border-box
+}
+
+body {
+    margin:0;
+    background:#f4f7fb;
+    color:#1e293b;
+    font-family:Inter,Segoe UI,Arial,sans-serif
+}
+
+.shell {
+    max-width:1480px;
+    margin:auto;
+    padding:32px 28px
+}
+
+.header {
+    margin-bottom:28px
+}
+
+.eyebrow {
+    color:#2563eb;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.14em
+}
+
+.header h1 {
+    font-size:34px;
+    letter-spacing:-.035em;
+    margin:8px 0
+}
+
+.header p {
+    color:#64748b;
+    max-width:850px;
+    line-height:1.55
+}
+
+.layout {
+    display:grid;
+    grid-template-columns:minmax(320px,400px) minmax(0,1fr);
+    gap:24px;
+    align-items:start
+}
+
+.panel {
+    background:white;
+    border:1px solid #e2e8f0;
+    border-radius:15px;
+    box-shadow:0 5px 22px #1e293b08;
+    padding:26px
+}
+
+.panel h2 {
+    font-size:20px;
+    margin:0 0 16px
+}
+
+.meta {
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:22px
+}
+
+.meta span {
+    font-size:12px;
+    background:#eff6ff;
+    color:#1d4ed8;
+    padding:7px 10px;
+    border-radius:6px
+}
+
+.controls>label {
+    display:block;
+    font-weight:650;
+    font-size:13px;
+    margin:20px 0 9px
+}
+
+.radio label {
+    display:block;
+    margin:8px 0;
+    font-size:14px
+}
+
+.radio input {
+    margin-right:8px
+}
+
+.input-grid {
+    max-height:380px;
+    overflow-y:auto;
+    margin:20px 0;
+    border-top:1px solid #e2e8f0
+}
+
+.input-row {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:9px 2px;
+    border-bottom:1px solid #edf2f7
+}
+
+.input-row label {
+    font-size:14px
+}
+
+.input-row input {
+    width:55%;
+    padding:9px;
+    border:1px solid #cbd5e1;
+    border-radius:7px;
+    font-size:14px
+}
+
+.primary {
+    background:#2563eb;
+    color:white;
+    border:0;
+    border-radius:9px;
+    width:100%;
+    padding:14px;
+    font-size:14px;
+    font-weight:700;
+    cursor:pointer
+}
+
+.primary:hover {
+    background:#1d4ed8
+}
+
+.message {
+    margin-top:14px;
+    font-size:13px;
+    color:#475569
+}
+
+.subtle {
+    color:#64748b;
+    font-size:13px
+}
+
+.implied h3 {
+    font-size:15px;
+    margin-top:24px
+}
+
+.implied table {
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px
+}
+
+.implied th,.implied td {
+    text-align:right;
+    padding:9px 12px;
+    border-bottom:1px solid #e2e8f0
+}
+
+.implied th:first-child,.implied td:first-child {
+    text-align:left
+}
+
+.implied th {
+    background:#f8fafc
+}
+
+@media(max-width:900px) {
+    .layout {
+        grid-template-columns:1fr
+    }
+    .shell {
+        padding:18px
+    }
+    .panel {
+        padding:18px
+    }
+}
+
+/* Calendar selection and spreadsheet input */
+.layout {
+    grid-template-columns:minmax(390px,510px) minmax(0,1fr)
+}
+
+.field-label {
+    display:block;
+    font-weight:650;
+    font-size:13px;
+    margin:20px 0 10px
+}
+
+.format-toggle {
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap
+}
+
+.format-toggle label {
+    display:flex;
+    align-items:center;
+    gap:7px;
+    padding:10px 12px;
+    border:1px solid #dbe3ee;
+    border-radius:8px;
+    background:#f8fafc;
+    font-size:13px;
+    cursor:pointer
+}
+
+.calendar {
+    display:flex;
+    flex-direction:column;
+    gap:14px
+}
+
+.calendar-year {
+    border:1px solid #e2e8f0;
+    border-radius:10px;
+    padding:12px;
+    background:#fbfdff
+}
+
+.year-label {
+    font-size:12px;
+    font-weight:750;
+    color:#475569;
+    margin-bottom:10px
+}
+
+.month-grid {
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:7px
+}
+
+.month-button {
+    border:1px solid #dbe3ee;
+    background:#fff;
+    color:#475569;
+    border-radius:7px;
+    padding:11px 0;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .12s,border-color .12s
+}
+
+.month-button:hover {
+    border-color:#2563eb;
+    color:#1d4ed8
+}
+
+.month-button.selected {
+    background:#2563eb;
+    color:white;
+    border-color:#2563eb
+}
+
+.selection-summary {
+    font-size:12px;
+    color:#475569;
+    margin:11px 0 22px
+}
+
+.spreadsheet-heading {
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:12px
+}
+
+.spreadsheet-heading h3 {
+    font-size:15px;
+    margin:0
+}
+
+.spreadsheet-heading .subtle {
+    font-size:12px
+}
+
+.controls .primary {
+    margin-top:20px
+}
+
+@media(max-width:900px) {
+    .layout {
+        grid-template-columns:1fr
+    }
+}
+
+@media(max-width:520px) {
+    .month-grid {
+        grid-template-columns:repeat(3,minmax(0,1fr))
+    }
+}
+
+/* Fill-handle interaction: dragging copies the same value into adjacent rows. */
+#forecast-table td[data-dash-column="value"] {
+    position:relative
+}
+
+.forecast-fill-handle {
+    position:absolute;
+    right:0;
+    bottom:0;
+    width:11px;
+    height:11px;
+    background:#2563eb;
+    border:2px solid white;
+    box-shadow:0 0 0 1px #2563eb;
+    cursor:crosshair;
+    z-index:10;
+    touch-action:none
+}
+
+#forecast-table td.fill-preview {
+    background:#dbeafe!important;
+    outline:1px solid #2563eb;
+    outline-offset:-1px
+}
+
+body.is-fill-dragging,body.is-fill-dragging * {
+    user-select:none!important;
+    cursor:crosshair!important
+}
+
+/* Model selection above the comparison chart. */
+.specification-selector {
+    display:flex;
+    gap:9px 16px;
+    flex-wrap:wrap;
+    margin:4px 0 22px
+}
+
+.specification-selector label {
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    font-size:13px;
+    padding:8px 11px;
+    background:#f8fafc;
+    border:1px solid #dbe3ee;
+    border-radius:8px;
+    cursor:pointer
+}
+
+.specification-selector input {
+    accent-color:#2563eb
+}
+
+/* Wider assumptions panel and spreadsheet that fits without horizontal scrolling. */
+.shell {
+    max-width:1720px
+}
+
+.layout {
+    grid-template-columns:minmax(550px, 46fr) minmax(0, 54fr)
+}
+
+#forecast-table {
+    width:100%;
+    min-width:0
+}
+
+#forecast-table .dash-spreadsheet-container,
+#forecast-table .dash-spreadsheet-inner {
+    width:100%;
+    min-width:0
+}
+
+#forecast-table table {
+    width:100%!important;
+    table-layout:fixed
+}
+
+#forecast-table th,#forecast-table td {
+    overflow:hidden;
+    text-overflow:ellipsis
+}
+
+#forecast-table th {
+    white-space:normal!important;
+    overflow-wrap:anywhere;
+    line-height:1.35
+}
+
+#forecast-table td[data-dash-column="value"] {
+    cursor:cell
+}
+
+/* Selection/editing are blue, never the default pink/red active-cell color. */
+#forecast-table td.cell--selected,
+#forecast-table td.focused,
+#forecast-table td.cell--focused {
+    background:#eff6ff!important;
+    box-shadow:inset 0 0 0 2px #2563eb!important;
+    border-color:#2563eb!important;
+}
+
+#forecast-table td.cell--selected.focused,
+#forecast-table td.cell--selected.cell--focused,
+#forecast-table td:focus-within {
+    background:#dbeafe!important;
+    box-shadow:inset 0 0 0 2px #1d4ed8!important;
+    border-color:#1d4ed8!important;
+}
+
+#forecast-table td[data-dash-column="value"] input,
+#forecast-table td[data-dash-column="value"] textarea {
+    background:white!important;
+    color:#0f172a!important;
+    outline:2px solid #2563eb!important;
+    border:0!important;
+    width:100%;
+}
+
+#forecast-table td[data-dash-column="value"]:not(.has-forecast-value) .forecast-fill-handle,
+#forecast-table td[data-dash-column="value"]:focus-within .forecast-fill-handle {
+    display:none
+}
+
+#forecast-table td.fill-preview {
+    background:#bfdbfe!important;
+    box-shadow:inset 0 0 0 2px #2563eb!important
+}
+
+@media(max-width:1150px) {
+    .layout {
+        grid-template-columns:1fr
+    }
+}
+
+@media(max-width:620px) {
+    .shell {
+        padding:12px
+    }
+    .panel {
+        padding:14px
+    }
+    #forecast-table th,#forecast-table td {
+        font-size:12px!important;
+        padding:7px 5px!important
+    }
+}
+
+
+/* MULTI-VARIABLE DASHBOARD: selector shared by all forecast pages. */
+.variable-selector {
+  max-width: 1720px;
+  margin: 24px auto 0;
+  padding: 0 28px;
+}
+.variable-selector .Select-control {
+  max-width: 360px;
+}
+.variable-selector > .dash-dropdown {
+  max-width: 360px;
+}
+
+/* POPULATION PAGE: annual forecasts and county selection. */
+.population-page {
+  max-width: 1720px;
+  margin: 0 auto;
+  padding: 28px;
+  display: grid;
+  grid-template-columns: minmax(280px, 350px) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.population-page .format-toggle {
+  margin-bottom: 14px;
+}
+.population-page .format-toggle label {
+  margin-right: 12px;
+}
+.population-table-scroll {
+  overflow-x: auto;
+  margin-top: 18px;
+}
+.population-table-scroll table {
+  min-width: 100%;
+  white-space: nowrap;
+}
+@media (max-width: 1150px) {
+  .population-page {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 620px) {
+  .variable-selector {
+    padding: 0 12px;
+  }
+  .population-page {
+    padding: 12px;
+  }
+}
+
+/* Subtle DataTable selection: override Dash's default pink/red focus border. */
+#forecast-table .dash-cell.cell--selected,
+#forecast-table .dash-cell.focused,
+#forecast-table .dash-cell.cell--focused,
+#forecast-table .dash-cell.cell--selected.focused,
+#forecast-table .dash-cell:focus-within {
+    background-color: #f8fafc !important;
+    border: 1px solid #94a3b8 !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Keep the actual text editor unobtrusive while typing. */
+#forecast-table td[data-dash-column="value"] input,
+#forecast-table td[data-dash-column="value"] textarea,
+#forecast-table td[data-dash-column="value"] input:focus,
+#forecast-table td[data-dash-column="value"] textarea:focus {
+    outline: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    background-color: #fff !important;
+}
+
+/* Reset Counties button */
+#population-reset-counties {
+    font-size: 14px;
+    padding: 8px 16px;
+    width: auto;
+}
